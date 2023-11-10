@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+nav{
+    background-color: #a51670cc;
+    padding: 10px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+}
+nav li{
+    margin-left: 7px;
+}
+nav li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+nav li a:hover{
+    background-color: white;
+    color: #880e5bcc;
+}
+.submenu{
+    display: none;
+}
+nav ul li:hover .submenu{
+    display: block;
+    position: absolute;
+    background-color: #b33a86;
+}
+nav ul li:hover .submenu ul{
+    display: block;
+}
+nav ul li:hover .submenu ul li{
+    width: 228px;
+    height: 35px;
+    transition: 0.7s;
+}
+.banner{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient( rgba(214, 25, 142, 0.281), rgba(0, 0, 0, 0.308)),url('./img/ceu.PNG');
+    background-size:cover;
+    background-attachment: fixed;
+    height: 565px;
+    background-position: 50% 35%;
+}
+.banner .banner-text{
+    margin: 200px;
+    text-align: center;
+    padding: 0 90px;
+}
+.banner .banner-text h1{
+    font-size: 65px;
+    font-weight: 600;
+    color: white;
+}
+.banner .banner-text p{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+.texto{
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+    font-size: 18px;
+}
+.roupanova{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px 5px 10px;
+    font-size: 17px;
+}
+.roupanova2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px 5px 10px;
+    font-size: 18px;
+}
+.roupanova3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px 5px 10px;
+    font-size: 18px;
+}
+.roupanova4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px 20px 10px;
+    font-size: 18px;
+}
+.texto2{
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+    font-size: 18px;
+}
+.ft {
+    display: block;
+    margin: auto;
+    width: 350px;
+    height: 500px;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.ft2 {
+    display: block;
+    margin: auto;
+    width: 400px;
+    height: 455px;
+    margin-top: 35px;
+    margin-bottom: -15px;
+    border-radius: 5px;
+}
+figure figcaption{
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.ft3 {
+    display: block;
+    margin: auto;
+    width: 576px;
+    height: 432px;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+figure figcaption{
+    margin-top: 25px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.texto3{
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+    font-size: 18px;
+}
+.texto3 .meu-link{
+    color: #cc0c86bb;
+    text-decoration: none;
+}
+.texto3 .meu-link:hover{
+    color: #4e0835cc;
+    text-decoration:none;
+    /*
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    border: 2px solid #4e0835cc;
+    */
+}
+.texto4{
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+    font-size: 18px;
+}
+.astros1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px 20px 10px;
+    font-size: 18px;
+}
+.astros2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px 20px 10px;
+    font-size: 18px;
+}
+.astros3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px 20px 10px;
+    font-size: 18px;
+}
+.astros4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px 20px 10px;
+    font-size: 18px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.botoes button{
+    height: 550px;
+    width: 750px;
+    border-radius: 5px;
+    margin: 0px 5px 15px 5px;
+    font-size: 120px;
+    font-weight: 700;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+    text-align: center;
+}
+.botoes button.btn{
+    color: #4e0835cc;
+    background: none;
+    border: 10px solid #4e0835cc;
+    animation: vibrar 0.5s ease-in-out infinite both;
+    margin-bottom: 100px;
+}
+.botoes button.btn:hover{
+    background-color: #e0e0e0;
+    color: #4e0835cc;
+}
+@keyframes vibrar {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.fim{
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+    font-size: 18px;
+}
+.spotify {
+    display: block;
+    margin: auto;
+    width: 466px;
+    height: 566px;
+    margin-top: 35px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+#senha {
+    padding: 10px;
+    border: 1px solid #880e5bcc;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 10px;
+    width: 250px;
+    transition: 0.3s;
+    outline: none;
+}
+
+#senha:focus {
+    border-color: #4e0835cc;
+    box-shadow: 0 0 5px #4e0835cc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #880e5bcc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+}
+
+button:hover {
+    background-color: #4e0835cc;
+}
+
+.centered-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; 
+    margin-bottom: 20px;
+}
+#videoSecreto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.final{
+    align-items: center;
+    margin: 500px 10px 10px 10px;
+    font-size: 95px;
+}
+.fim2{
+    align-items: center;
+    margin: -20px 10px 10px 10px;
+    font-size: 25px;
+}
+.decision-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-top: 22px;
+    margin-bottom: 30px;
+}
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 9999;
+    background: rgba(0,0,0,0.8);
+    opacity:0;
+    visibility: hidden;
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal:target {
+    visibility:visible;
+    opacity:1;
+    transition-delay: 0s, 0s, 0.25s;
+}
+.close {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background: #fff;
+    color: #000000;
+    padding: 1%;
+    font-size: 25px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.close:hover {
+    background: #e0e0e0;
+    color: #880e5bcc;
+}
+.final{
+    display: flex;
+    align-items: center;
+    margin: 1px 10px 20px 10px;
+    font-size: 18px;
+}
+.final .meu-link{
+    color: #cc0c86bb;
+    text-decoration: none;
+}
+.final .meu-link:hover{
+    color: #4e0835cc;
+    text-decoration:none;
+    /*
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    border: 2px solid #4e0835cc;
+    */
+}
+.menu-icon{
+    display: none;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 960px) {
+    .menu-icon {
+        display: block;
+        margin-right: -20px;
+    }
+    nav ul {
+        position: fixed;
+        background: #b33a86;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: -100%; 
+        transition: left 0.3s;
+        flex-direction: column;
+        justify-content: center;
+    }
+    nav ul.active {
+        left: 0; 
+    }
+    nav ul li{
+        font-size: 80px;
+        font-weight: 500px;
+        margin: 15px 0px;
+    }
+    
+    nav .logo a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 1000px;
+        margin-left: -30px;
+    }
+    .banner{
+        display: flex;
+        justify-content: center;
+        background: linear-gradient( rgba(214, 25, 142, 0.281), rgba(0, 0, 0, 0.308)),url('./img/ceu.PNG');
+        background-size:150%;
+        background-position: center center;
+        background-attachment: fixed;
+        height: 300px;
+        background-position: center calc(50% - 200px);
+    }
+    .banner .banner-text h1{
+        font-size: 45px;
+        white-space: nowrap;
+        margin-top: -65px;
+    }
+    .roupanova{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 5px 5px 5px;
+        font-size: 15px;
+    }
+    .roupanova2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 5px 5px 5px;
+        font-size: 15px;
+    }
+    .roupanova3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 5px 5px 5px;
+        font-size: 15px;
+    }
+    .roupanova4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 5px 20px 5px;
+        font-size: 15px;
+    }
+    .ft {
+        display: block;
+        margin: auto;
+        width: 300px;
+        height: 400px;
+        margin-top: 35px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+    .ft2 {
+        display: block;
+        margin: auto;
+        width: 350px;
+        height: 350px;
+        margin-top: 35px;
+        margin-bottom: -15px;
+        border-radius: 5px;
+    }
+    .ft3 {
+        display: block;
+        margin: auto;
+        width: 350px;
+        height: 270px;
+        margin-top: 35px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+    .spotify {
+        display: block;
+        margin: auto;
+        width: 300px;
+        height: 400px;
+        margin-top: 35px;
+        margin-bottom: 50px;
+        border-radius: 5px;
+    }
+    #conteudoSecreto #videoSecreto video {
+        height: 325px;
+        width: 400px;
+        margin: 0; 
+        display: block; 
+        margin-top: -600px;
+    }
+    .final{
+        align-items: center;
+        margin: -600px 10px 10px 10px;
+        font-size: 22px;
+    }
+    .fim2{
+        align-items: center;
+        margin: -20px 10px 10px 10px;
+        font-size: 20px;
+    }
+    .modal .video-container video{
+        height: 325px;
+        width: 400px;
+    }
+}
