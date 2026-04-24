@@ -44,7 +44,7 @@
         <div class="banner-text">
             <p class="subtitle">3 anos e meio depois</p>
             <h1>O tempo passou...</h1>
-            <h2>e a história ficou grande demais para caber em texto corrido.</h2>
+            <h2>e eu divaria tudo novamente</h2>
         </div>
     </section>
 
@@ -52,33 +52,43 @@
         <section class="intro-shell">
             <div class="container intro-grid">
                 <div class="intro-copy card">
-                    <span class="section-kicker">Novo capítulo</span>
-                    <h3>A continuação do presente, agora com a versão premium do projeto.</h3>
-                    <p>Se o site original guardou intacto o sentimento do começo, essa página pode guardar outra coisa também: a evolução. Do namoro, da rotina, das viagens, das pessoas que entraram no caminho e até do desenvolvedor que construiu tudo isso lá atrás.</p>
-                    <p>Da Copa que marcou o nosso começo até a próxima que já vem no horizonte, aconteceu tanta coisa que fazia sentido organizar esse capítulo como uma retrospectiva viva: mais visual, mais dinâmica e mais caprichada.</p>
+                    <span class="section-kicker">Recapitulando</span>
+                    <!-- <h3>A continuação do presente, agora com a versão premium do projeto.</h3> -->
+                    <p>Pois é, amoreco meu… o tempo voa quando a gente se diverte, e aos poucos vamos nos consolidando cada vez mais no grupo de casais remanescentes que estão juntos há muito tempo. </p>
+                    <p>Por outro lado, cada momento com você é tão único e especial, que dá a certeza de que três anos e meio ainda são muito pouco comparado com o que eu quero construir com você.</p>
+                    <p>Completamos, então, nosso primeiro ciclo de Copa do Mundo… e que venha o próximo, quem sabe com um final diferente kkkk (ainda que eu não esteja tão confiante, e talvez nem tenha o Pombo F).</p>
+                    <button
+                        class="love-reveal"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="love-reveal-text"
+                    >
+                        <span class="love-reveal__hint">Mas é como eu sempre digo...</span>
+                        <span class="love-reveal__text" id="love-reveal-text">azar no jogo, sorte no amor rsrs.</span>
+                    </button>
                 </div>
 
                 <div class="stats-panel card">
                     <div class="stats-head">
-                        <span class="section-kicker">Resumo do ciclo</span>
-                        <h3>Alguns números para abrir os trabalhos</h3>
+                        <span class="section-kicker">Mocálculos</span>
+                        <h3>Alguns números para refrescar a memória</h3>
                     </div>
                     <div class="stats-grid">
                         <article class="stat-item">
                             <span class="stat-value">3.5</span>
-                            <span class="stat-label">anos juntos e contando</span>
+                            <span class="stat-label">anos juntos <br>(e contando)</span>
                         </article>
                         <article class="stat-item">
-                            <span class="stat-value">5</span>
-                            <span class="stat-label">frentes principais desta fase</span>
+                            <span class="stat-value">6</span>
+                            <span class="stat-label">estados conhecidos</span>
                         </article>
                         <article class="stat-item">
-                            <span class="stat-value">+∞</span>
-                            <span class="stat-label">histórias para revisar depois</span>
+                            <span class="stat-value">∞</span>
+                            <span class="stat-label">amor, beijinhos e abraços</span>
                         </article>
                         <article class="stat-item">
-                            <span class="stat-value">1</span>
-                            <span class="stat-label">certeza: eu escolheria você de novo</span>
+                            <span class="stat-value">1000%</span>
+                            <span class="stat-label">de certeza: eu escolheria você de novo</span>
                         </article>
                     </div>
                 </div>
@@ -364,5 +374,15 @@
     </main>
 
     <script src="main.js"></script>
+    <script>
+        const loveReveal = document.querySelector('.love-reveal');
+
+        if (loveReveal) {
+            loveReveal.addEventListener('click', function () {
+                const isOpen = loveReveal.classList.toggle('is-open');
+                loveReveal.setAttribute('aria-expanded', String(isOpen));
+            });
+        }
+    </script>
 </body>
 </html>

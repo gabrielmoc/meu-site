@@ -113,7 +113,7 @@ nav ul li:hover .submenu ul li{
     align-items: center;
     background:
         linear-gradient(rgba(73, 10, 49, 0.35), rgba(30, 3, 20, 0.42)),
-        url('./img/ceu.PNG');
+        url('./img/novo.jpeg');
     background-size: cover;
     background-attachment: fixed;
     background-position: 50% 35%;
@@ -216,6 +216,12 @@ main{
     padding: 30px;
 }
 
+.intro-copy{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .intro-copy h3,
 .stats-head h3{
     font-size: 32px;
@@ -228,6 +234,86 @@ main{
     line-height: 1.9;
     color: var(--muted);
     margin-top: 14px;
+}
+
+.love-reveal{
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: min(100%, 360px);
+    min-height: auto;
+    margin-top: 22px;
+    padding: 16px 18px;
+    border: 1px solid rgba(122, 20, 84, 0.12);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,215,235,0.55));
+    box-shadow: 0 12px 24px rgba(93, 24, 67, 0.08);
+    cursor: pointer;
+    text-align: left;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.love-reveal:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(93, 24, 67, 0.1);
+    border-color: rgba(122, 20, 84, 0.18);
+}
+
+.love-reveal:focus-visible{
+    outline: 3px solid rgba(143, 15, 97, 0.28);
+    outline-offset: 4px;
+}
+
+.love-reveal__hint,
+.love-reveal__text{
+    display: block;
+}
+
+.love-reveal__hint{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-strong);
+    transition: opacity 0.2s ease, transform 0.25s ease;
+}
+
+.love-reveal__text{
+    max-width: 100%;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--accent-strong);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.22s ease, max-height 0.3s ease, transform 0.22s ease;
+}
+
+.love-reveal.is-open .love-reveal__hint{
+    opacity: 0;
+    transform: translateY(-4px);
+}
+
+.love-reveal.is-open .love-reveal__text{
+    opacity: 1;
+    max-height: 80px;
+    transform: translateY(0);
+}
+
+@media (max-width: 560px) {
+    .love-reveal{
+        width: 100%;
+        padding: 14px 16px;
+    }
+
+    .love-reveal__text{
+        font-size: 20px;
+    }
 }
 
 .stats-grid{
