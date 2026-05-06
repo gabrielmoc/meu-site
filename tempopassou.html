@@ -874,6 +874,7 @@
 
             let activeTripKey = 'sp';
             let currentSlide = 0;
+            let currentHeroIndex = 0;
             let autoPlayId = null;
 
             const getVisibleSlides = () => {
@@ -908,14 +909,12 @@
                 window.clearInterval(autoPlayId);
 
                 autoPlayId = window.setInterval(() => {
-                    const items = Array.from(gallery.querySelectorAll('.travel-gallery__item'));
-                    const visibleSlides = getVisibleSlides();
-                    const maxSlide = Math.max(0, items.length - visibleSlides);
+                    const trip = travelContent[activeTripKey];
 
-                    if (maxSlide <= 0) return;
+                    if (!trip || trip.gallery.length <= 1) return;
 
-                    currentSlide = currentSlide >= maxSlide ? 0 : currentSlide + 1;
-                    updateGalleryPosition();
+                    const nextHeroIndex = currentHeroIndex >= trip.gallery.length - 1 ? 0 : currentHeroIndex + 1;
+                    setActiveGalleryItem(nextHeroIndex);
                 }, 5000);
             };
 
@@ -925,23 +924,49 @@
                 heroCaption.textContent = heroData.caption || 'Placeholder para a legenda principal da viagem selecionada.';
             };
 
+            const syncVisibleSlideWithHero = () => {
+                const items = Array.from(gallery.querySelectorAll('.travel-gallery__item'));
+                const visibleSlides = getVisibleSlides();
+                const maxSlide = Math.max(0, items.length - visibleSlides);
+
+                if (currentHeroIndex < currentSlide) {
+                    currentSlide = currentHeroIndex;
+                } else if (currentHeroIndex >= currentSlide + visibleSlides) {
+                    currentSlide = currentHeroIndex - visibleSlides + 1;
+                }
+
+                currentSlide = Math.max(0, Math.min(currentSlide, maxSlide));
+            };
+
+            const setActiveGalleryItem = (index) => {
+                const trip = travelContent[activeTripKey];
+                const items = Array.from(gallery.querySelectorAll('.travel-gallery__item'));
+                const selectedImage = trip.gallery[index];
+
+                if (!selectedImage || !items[index]) return;
+
+                currentHeroIndex = index;
+
+                items.forEach((entry) => entry.classList.remove('is-active'));
+                items[index].classList.add('is-active');
+
+                updateHero({
+                    src: selectedImage.src,
+                    alt: selectedImage.alt,
+                    caption: selectedImage.caption || trip.hero.caption
+                });
+
+                syncVisibleSlideWithHero();
+                updateGalleryPosition();
+            };
+
             const bindGalleryEvents = () => {
                 const items = Array.from(gallery.querySelectorAll('.travel-gallery__item'));
 
                 items.forEach((item) => {
                     item.addEventListener('click', () => {
-                        const trip = travelContent[activeTripKey];
-                        const selectedImage = trip.gallery[Number(item.dataset.index)];
-
-                        if (!selectedImage) return;
-
-                        items.forEach((entry) => entry.classList.remove('is-active'));
-                        item.classList.add('is-active');
-                        updateHero({
-                            src: selectedImage.src,
-                            alt: selectedImage.alt,
-                            caption: selectedImage.caption || trip.hero.caption
-                        });
+                        setActiveGalleryItem(Number(item.dataset.index));
+                        startGalleryAutoplay();
                     });
                 });
             };
@@ -982,8 +1007,10 @@
                         `)
                         .join('');
 
+                    currentHeroIndex = 0;
                     currentSlide = 0;
                     bindGalleryEvents();
+                    setActiveGalleryItem(0);
                     updateGalleryPosition();
                     startGalleryAutoplay();
                     stage.classList.add('is-visible');
@@ -1025,6 +1052,7 @@
             }
 
             window.addEventListener('resize', () => {
+                syncVisibleSlideWithHero();
                 updateGalleryPosition();
             });
 
