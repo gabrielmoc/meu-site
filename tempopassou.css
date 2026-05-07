@@ -535,7 +535,7 @@ main{
 }
 
 .travel-copy p{
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.85;
     color: var(--muted);
     margin-top: 14px;
