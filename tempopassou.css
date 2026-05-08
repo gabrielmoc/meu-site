@@ -747,7 +747,7 @@ main{
 }
 
 .timeline-card img{
-    height: 220px;
+    height: 350px;
     object-fit: cover;
     border-radius: 18px;
 }
